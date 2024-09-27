@@ -86,10 +86,11 @@ Output:
 
 ### SHOW_TABLES
 
-`SHOW_TABLES` returns the name, type and comment of all tables in the database.
+`SHOW_TABLES` returns the id, name, type and comment of all tables in the database.
 
 | Column | Description | Type |
 | ------ | ----------- | ---- |
+| id   | id of the table   | INT    |
 | name | name of the table | STRING |
 | type | type of the table | STRING |
 | comment | comment of the table | STRING |
@@ -99,19 +100,20 @@ CALL show_tables() RETURN *;
 ```
 Output:
 ```
---------------------------------------------
-| name        | type | comment             |
---------------------------------------------
-| gf          | RDF  |                     |
---------------------------------------------
-| gf_TRIPLES  | REL  |                     |
---------------------------------------------
-| gf_RESOURCE | NODE |                     |
---------------------------------------------
-| person      | NODE | person info         |
---------------------------------------------
-| knows       | REL  | person knows person |
---------------------------------------------
+-------------------------------------------------------
+|id     | name        | type    | comment             |
+|UINT64 | STRING      | STRING  | STIRNG              |
+-------------------------------------------------------
+|0      | gf          | RDF     |                     |
+-------------------------------------------------------
+|1      | gf_TRIPLES  | REL     |                     |
+-------------------------------------------------------
+|2      | gf_RESOURCE | NODE    |                     |
+-------------------------------------------------------
+|3      | person      | NODE    | person info         |
+-------------------------------------------------------
+|4      | knows       | REL     | person knows person |
+-------------------------------------------------------
 ```
 
 ### SHOW_CONNECTION
